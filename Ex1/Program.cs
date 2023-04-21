@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using static Ex1.Constants;
 
-Console.WriteLine("Ex1");
+Console.WriteLine("BEGIN: Ex1");
 
 Console.WriteLine("...");
 
@@ -194,4 +194,4 @@ Console.WriteLine("Query3:" + query3);
 
 Console.WriteLine("...");
 
-Console.WriteLine("GOODBYE.");
+Console.WriteLine("END");
