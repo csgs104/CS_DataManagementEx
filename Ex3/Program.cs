@@ -4,12 +4,19 @@ using Ex3.Models.Entities;
 using Ex3.Repositories.DbContexts;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 
-Console.WriteLine("Ex3");
+Console.WriteLine("BEGIN: Ex3");
 
 Console.WriteLine("...");
 Initialize.Run();
+Console.WriteLine("...");
+
+var db = new ArtTestContext();
+
+Console.WriteLine("...");
+Initialize.Insert();
 Console.WriteLine("...");
 
 // Nuget Packages For Everyone:
@@ -36,8 +43,6 @@ Console.WriteLine("...");
 
 // migrations: 1. Initial, 2. ...
 
-var db = new ArtTestContext();
-
 var query1 = $@"
     SELECT mm.[MuseumName], ak.[Name] AS ArtworkName, cr.[Name] AS CharacterName
     FROM [Art].[dbo].[Artwork] ak
@@ -54,15 +59,82 @@ void Query1()
         .Include(character => character.Character)
         .Where(r => r.Artist.Country == "Italia")
         .Select(r => new {
-            MuseumName = r.Museum.Name,
             ArtworkName = r.Name,
-            CharacterOut = r.Character,
+            MuseumOut = r.Museum,
+            CharacterOut = r.Character
         }).ToList();
 
     foreach (var r in rs) 
     {
-        Console.WriteLine($"MuseumName: {r.MuseumName}, ArtworkName: {r.ArtworkName}, CharacterName: {r.CharacterOut?.Name ?? "NULL"}");
+        Console.WriteLine($"MuseumName: {r.MuseumOut.Name}, ArtworkName: {r.ArtworkName}, CharacterName: {r.CharacterOut?.Name ?? "NULL"}");
     }
 }
 
-Console.WriteLine("GOODBYE.");
+var query2 = $@"
+    SELECT ar.[Name] AS ArtistName, ak.[Name] AS ArtworkName
+    FROM [Art].[dbo].[Artwork] ak
+    JOIN [Art].[dbo].[Museum] mm ON mm.[Id_Museum] = ak.[Id_Museum]
+    JOIN [Art].[dbo].[Artist] ar ON ar.[Id_Artist] = ak.[Id_Artist]
+    WHERE mm.[City] = 'Parigi'";
+
+void Query2()
+{
+    var rs = db?.Artworks
+        .Include(museum => museum.Museum)
+        .Include(artist => artist.Artist)
+        .Where(r => r.Museum.City == "Parigi")
+        .Select(r => new {
+            ArtworkName = r.Name,
+            ArtistOut = r.Artist
+        }).ToList();
+
+    foreach (var r in rs)
+    {
+        Console.WriteLine($"MuseumName: {r.ArtistOut.Name}, ArtworkName: {r.ArtworkName}");
+    }
+}
+
+var query3 = $@"
+    SELECT mm.[City] AS CityName 
+    FROM [Art].[dbo].[Artwork] ak
+    JOIN [Art].[dbo].[Museum] mm ON mm.[Id_Museum] = ak.[Id_Museum]
+    WHERE ak.[Name] = 'Flora'";
+
+void Query3()
+{
+    var rs = db?.Artworks
+        .Include(museum => museum.Museum)
+        .Include(artist => artist.Artist)
+        .Where(r => r.Name == "Flora")
+        .Select(r => new {
+            MuseumOut = r.Museum
+        }).ToList();
+
+    foreach (var r in rs)
+    {
+        Console.WriteLine($"CityName: {r.MuseumOut.City}");
+    }
+}
+
+Console.WriteLine("Query1: " + query1);
+Console.WriteLine("Results:");
+Query1();
+
+Console.WriteLine("...");
+Console.WriteLine("...");
+
+Console.WriteLine("Query2: " + query2);
+Console.WriteLine("Results:");
+Query2();
+
+Console.WriteLine("...");
+Console.WriteLine("...");
+
+Console.WriteLine("Query3: " + query3);
+Console.WriteLine("Results:");
+Query3();
+
+Console.WriteLine("...");
+Console.WriteLine("...");
+
+Console.WriteLine("END");
