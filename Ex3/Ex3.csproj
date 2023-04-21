@@ -20,15 +20,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Models\" />
-    <None Remove="Models\Entities\" />
-    <None Remove="Repositories\" />
     <None Remove="Repositories\DdContext\Configurations\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Models\Entities\" />
-    <Folder Include="Repositories\" />
-    <Folder Include="Repositories\DbContexts\Configurations\" />
   </ItemGroup>
 </Project>

@@ -6,17 +6,15 @@
   <MonoDevelop.Ide.ItemProperties.Ex1 PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
-      <File FileName="Constats.cs" Line="9" Column="2" />
-      <File FileName="Program.cs" Line="135" Column="47" />
+      <File FileName="Constats.cs" />
+      <File FileName="Program.cs" Line="197" Column="26" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Ex1" expanded="True">
             <Node name="NuGet.Config files" expanded="True" />
-            <Node name="Ex1" expanded="True">
-              <Node name="Program.cs" selected="True" />
-            </Node>
+            <Node name="Ex1" expanded="True" />
           </Node>
         </State>
       </Pad>

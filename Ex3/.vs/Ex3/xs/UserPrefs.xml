@@ -1,34 +1,22 @@
 ﻿<Properties StartupConfiguration="{CEF97EEF-8D80-4085-8BDA-15DB596514AC}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Ex3 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Entities/Artwork.cs">
-    <Files>
-      <File FileName="Models/Entities/Artwork.cs" Line="1" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Ex3" expanded="True">
+          <Node name="Ex3" expanded="True" selected="True">
             <Node name="Ex3" expanded="True">
-              <Node name="Models" expanded="True">
-                <Node name="Entities" expanded="True">
-                  <Node name="Artwork.cs" selected="True" />
-                </Node>
-              </Node>
-              <Node name="Repositories" expanded="True">
-                <Node name="DbContexts" expanded="True">
-                  <Node name="Configurations" expanded="True" />
-                </Node>
-              </Node>
+              <Node name="Dependencies" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Ex3 FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
 </Properties>
