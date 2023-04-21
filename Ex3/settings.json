@@ -1,0 +1,13 @@
+﻿{
+    "ConnectionStrings": {
+        "Art": "Server=127.0.0.1,1433; Database=ArtTest; Integrated Security=False; User ID=SA; Password=r00t.R00T; Encrypt=True; TrustServerCertificate=True ;Connection Timeout=180;"
+    },
+    "Logging": {
+        "LogLevel": {
+            "Default": "Information",
+            "Microsoft": "Warning",
+            "Microsoft.Hosting.Lifetime": "Information"
+        }
+    }
+}
+
