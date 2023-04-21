@@ -27,18 +27,14 @@ Console.WriteLine("...");
 // install on terminal: dotnet ef
 
 // scaffold on project terminal:
-// dotnet ef dbcontext Scaffold "Server=127.0.0.1,1433;Database=ArtTest;User ID=SA;Password=r00t.R00T;Encrypt=True;TrustServerCertificate=True;Connection Timeout=180;" Microsoft.EntityFrameworkCore.SqlServer -o Models/DB
-// dotnet ef dbcontext Scaffold "Server=127.0.0.1,1433;Database=ArtTest;User ID=SA;Password=r00t.R00T;Integrated Security=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=60;" Microsoft.EntityFrameworkCore.SqlServer -o Models/DB
+// dotnet ef dbcontext Scaffold "Server=127.0.0.1,1433;Database=ArtTest;User ID=SA;Password=r00t.R00T;Encrypt=True;TrustServerCertificate=True;Connection Timeout=180;" Microsoft.EntityFrameworkCore.SqlServer -o DB
 
-
-// dotnet ef dbcontext Scaffold "Server=127.0.0.1,1433;Initial Catalog=ArtTest;Persist Security Info=False;User ID=SA;Password=r00t.R00T;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=60;" -Provider Microsoft.EntityFrameworkCore.SqlServer -o Models/DB
-// dotnet ef dbcontext Scaffold "Server=127.0.0.1,1433;Database=ArtTest;Persist Security Info=False;User ID=SA;Password=r00t.R00T;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=60;" Microsoft.EntityFrameworkCore.SqlServer -o Models/DB
 // migration on project terminal:
 // do firts: dotnet ef migrations add Initial
 // do undo: dotnet ef migrations remove
 // do update: dotnet ef database update
 
-// migrations: 1.initial, 2. ...
+// migrations: 1. Initial, 2. ...
 
 var db = new ArtTestContext();
 
@@ -70,4 +66,3 @@ void Query1()
 }
 
 Console.WriteLine("GOODBYE.");
-

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ex3.Migrations
 {
     [DbContext(typeof(ArtTestContext))]
-    [Migration("20230421150904_Initial")]
+    [Migration("20230421154703_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -53,17 +53,17 @@ namespace Ex3.Migrations
 
             modelBuilder.Entity("Ex3.Models.Entities.Artwork", b =>
                 {
-                    b.Property<int?>("IdCharacter")
+                    b.Property<int>("IdArtwork")
                         .HasColumnType("int")
-                        .HasColumnName("Id_Character");
+                        .HasColumnName("Id_Artwork");
 
                     b.Property<int>("IdArtist")
                         .HasColumnType("int")
                         .HasColumnName("Id_Artist");
 
-                    b.Property<int>("IdArtwork")
+                    b.Property<int?>("IdCharacter")
                         .HasColumnType("int")
-                        .HasColumnName("Id_Artwork");
+                        .HasColumnName("Id_Character");
 
                     b.Property<int>("IdMuseum")
                         .HasColumnType("int")
@@ -76,10 +76,12 @@ namespace Ex3.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("Name");
 
-                    b.HasKey("IdCharacter")
+                    b.HasKey("IdArtwork")
                         .HasName("PK_Artwork");
 
                     b.HasIndex("IdArtist");
+
+                    b.HasIndex("IdCharacter");
 
                     b.HasIndex("IdMuseum");
 
@@ -142,7 +144,6 @@ namespace Ex3.Migrations
                     b.HasOne("Ex3.Models.Entities.Character", "Character")
                         .WithMany("Artworks")
                         .HasForeignKey("IdCharacter")
-                        .IsRequired()
                         .HasConstraintName("FK_Id_Character");
 
                     b.HasOne("Ex3.Models.Entities.Museum", "Museum")

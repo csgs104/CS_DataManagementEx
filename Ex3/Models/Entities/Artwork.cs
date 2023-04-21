@@ -15,7 +15,7 @@ public class Artwork
 
     public int IdArtist { get; set; } // = null!;
 
-    public int? IdCharacter { get; set; } // = null!;
+    public int? IdCharacter { get; set; } = null;
 
 
 
@@ -25,5 +25,5 @@ public class Artwork
 
     public virtual Museum Museum { get; set; } = null!;
 
-    public virtual Character? Character { get; set; } // = null
+    public virtual Character? Character { get; set; } = null;
 }

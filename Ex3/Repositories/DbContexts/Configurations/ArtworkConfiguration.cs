@@ -10,7 +10,7 @@ public class ArtworkConfiguration : IEntityTypeConfiguration<Artwork>
 {
     public void Configure(EntityTypeBuilder<Artwork> entity)
     {
-        entity.HasKey(e => e.IdCharacter).HasName("PK_Artwork");
+        entity.HasKey(e => e.IdArtwork).HasName("PK_Artwork");
 
         entity.ToTable("Artwork");
 
@@ -35,7 +35,7 @@ public class ArtworkConfiguration : IEntityTypeConfiguration<Artwork>
 
         entity.Property(e => e.IdCharacter)
             .HasColumnName("Id_Character")
-            .IsRequired(true);
+            .IsRequired(false);
 
         entity.HasOne(d => d.Museum).WithMany(p => p.Artworks)
             .HasForeignKey(d => d.IdMuseum)

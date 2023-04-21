@@ -52,15 +52,15 @@ namespace Ex3.Migrations
                 name: "Artwork",
                 columns: table => new
                 {
-                    Id_Character = table.Column<int>(type: "int", nullable: false),
                     Id_Artwork = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Id_Museum = table.Column<int>(type: "int", nullable: false),
-                    Id_Artist = table.Column<int>(type: "int", nullable: false)
+                    Id_Artist = table.Column<int>(type: "int", nullable: false),
+                    Id_Character = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Artwork", x => x.Id_Character);
+                    table.PrimaryKey("PK_Artwork", x => x.Id_Artwork);
                     table.ForeignKey(
                         name: "FK_Id_Artist",
                         column: x => x.Id_Artist,
@@ -82,6 +82,11 @@ namespace Ex3.Migrations
                 name: "IX_Artwork_Id_Artist",
                 table: "Artwork",
                 column: "Id_Artist");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Artwork_Id_Character",
+                table: "Artwork",
+                column: "Id_Character");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Artwork_Id_Museum",
