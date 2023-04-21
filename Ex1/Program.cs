@@ -114,15 +114,15 @@ try
     Console.WriteLine("OK!");
 
 
-    Console.Write("CREATE DATABASE Art...\t");
+    Console.Write("CREATE DATABASE Art...\t\t");
     cmdCreateArt.ExecuteNonQuery();
     Console.WriteLine("OK!");
 
-    Console.Write("USE Art...\t\t");
+    Console.Write("USE Art...\t\t\t");
     cmdUseArt.ExecuteNonQuery();
     Console.WriteLine("OK!");
 
-    Console.Write("CREATE TABLE Museum...\t");
+    Console.Write("CREATE TABLE Museum...\t\t");
     cmdCreateMuseum.ExecuteNonQuery();
     Console.WriteLine("OK!");
     Console.Write("INSERT INTO TABLE Museum...\t");
@@ -136,7 +136,7 @@ try
     cmdInsertArtists.ExecuteNonQuery();
     Console.WriteLine("OK!");
 
-    Console.Write("CREATE TABLE Character...\t\t");
+    Console.Write("CREATE TABLE Character...\t");
     cmdCreateCharacter.ExecuteNonQuery();
     Console.WriteLine("OK!");
     Console.Write("INSERT INTO TABLE Character...\t");
