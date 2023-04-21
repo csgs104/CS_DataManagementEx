@@ -7,7 +7,7 @@ public class Artist
 {
     // fileds
 
-    public int Id_Artist { get; set; } // = null!;
+    public int IdArtist { get; set; } // = null!;
 
     public string Name { get; set; } = null!;
 
@@ -16,5 +16,5 @@ public class Artist
 
     // relationships outiside
 
-    public virtual List<Artwork> Artworks { get; set; } = new();
+    public virtual ICollection<Artwork> Artworks { get; set; } = new List<Artwork>();
 }

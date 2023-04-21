@@ -10,11 +10,12 @@ public class ArtistConfiguration : IEntityTypeConfiguration<Artist>
 {
     public void Configure(EntityTypeBuilder<Artist> entity)
     {
-        entity.HasKey(e => e.Id_Artist).HasName("PK_Artist");
+        entity.HasKey(e => e.IdArtist).HasName("PK_Artist");
 
         entity.ToTable("Artist");
 
-        entity.Property(e => e.Id_Artist)
+        entity.Property(e => e.IdArtist)
+            .ValueGeneratedNever()
             .HasColumnName("Id_Artist")
             .IsRequired(true);
 

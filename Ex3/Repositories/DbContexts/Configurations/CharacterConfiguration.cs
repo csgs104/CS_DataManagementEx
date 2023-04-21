@@ -10,11 +10,12 @@ public class CharacterConfiguration : IEntityTypeConfiguration<Character>
 {
     public void Configure(EntityTypeBuilder<Character> entity)
     {
-        entity.HasKey(e => e.Id_Character).HasName("PK_Character");
+        entity.HasKey(e => e.IdCharacter).HasName("PK_Character");
 
         entity.ToTable("Character");
 
-        entity.Property(e => e.Id_Character)
+        entity.Property(e => e.IdCharacter)
+            .ValueGeneratedNever()
             .HasColumnName("Id_Character")
             .IsRequired(true);
 

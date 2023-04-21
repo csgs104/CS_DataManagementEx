@@ -10,13 +10,14 @@ public class ArtworkConfiguration : IEntityTypeConfiguration<Artwork>
 {
     public void Configure(EntityTypeBuilder<Artwork> entity)
     {
-        entity.HasKey(e => e.Id_Character).HasName("PK_Artwork");
+        entity.HasKey(e => e.IdCharacter).HasName("PK_Artwork");
 
         entity.ToTable("Artwork");
 
-        entity.Property(e => e.Id_Artwork)
+        entity.Property(e => e.IdArtwork)
+            .ValueGeneratedNever()
             .HasColumnName("Id_Artwork")
-            .IsRequired(false);
+            .IsRequired(true);
 
         entity.Property(e => e.Name)
             .HasColumnName("Name")
@@ -24,30 +25,30 @@ public class ArtworkConfiguration : IEntityTypeConfiguration<Artwork>
             .IsUnicode(true)
             .IsRequired(true);
 
-        entity.Property(e => e.Id_Museum)
+        entity.Property(e => e.IdMuseum)
             .HasColumnName("Id_Museum")
             .IsRequired(true);
 
-        entity.Property(e => e.Id_Artist)
+        entity.Property(e => e.IdArtist)
             .HasColumnName("Id_Artist")
             .IsRequired(true);
 
-        entity.Property(e => e.Id_Character)
+        entity.Property(e => e.IdCharacter)
             .HasColumnName("Id_Character")
-            .IsRequired(false);
+            .IsRequired(true);
 
         entity.HasOne(d => d.Museum).WithMany(p => p.Artworks)
-            .HasForeignKey(d => d.Id_Museum)
+            .HasForeignKey(d => d.IdMuseum)
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FK_Id_Museum");
 
         entity.HasOne(d => d.Artist).WithMany(p => p.Artworks)
-            .HasForeignKey(d => d.Id_Artist)
+            .HasForeignKey(d => d.IdArtist)
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FK_Id_Artist");
 
         entity.HasOne(d => d.Character).WithMany(p => p.Artworks)
-            .HasForeignKey(d => d.Id_Character)
+            .HasForeignKey(d => d.IdCharacter)
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FK_Id_Character");
     }

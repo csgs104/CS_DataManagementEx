@@ -7,23 +7,23 @@ public class Artwork
 {
     // fileds
 
-    public int Id_Artwork { get; set; } // = null!;
+    public int IdArtwork { get; set; } // = null!;
 
     public string Name { get; set; } = null!;
 
-    public int Id_Museum { get; set; } // = null!;
+    public int IdMuseum { get; set; } // = null!;
 
-    public int Id_Artist { get; set; } // = null!;
+    public int IdArtist { get; set; } // = null!;
 
-    public int? Id_Character { get; set; } // = null!;
+    public int? IdCharacter { get; set; } // = null!;
 
 
 
-    // relationships outiside
+    // relationships inside 
 
-    public virtual Museum Museum { get; set; } = new();
+    public virtual Artist Artist { get; set; } = null!;
 
-    public virtual Artist Artist { get; set; } = new();
+    public virtual Museum Museum { get; set; } = null!;
 
-    public virtual Character? Character { get; set; } // = null;
+    public virtual Character? Character { get; set; } // = null
 }
