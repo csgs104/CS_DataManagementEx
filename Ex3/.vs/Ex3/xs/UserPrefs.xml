@@ -9,9 +9,19 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Ex3" expanded="True" selected="True">
+          <Node name="Ex3" expanded="True">
             <Node name="Ex3" expanded="True">
               <Node name="Dependencies" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Entities" expanded="True" />
+              </Node>
+              <Node name="Repositories" expanded="True">
+                <Node name="DbContexts" expanded="True">
+                  <Node name="Configurations" expanded="True">
+                    <Node name="ArtistConfiguration.cs" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>
