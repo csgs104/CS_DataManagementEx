@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using static Ex1.Constants;
 
 Console.WriteLine("BEGIN: Ex1");
@@ -14,7 +14,7 @@ var useArt = @"
     BEGIN USE [Art] END";
 
 var createMuseum= @"
-    IF NOT EXISTS (SELECT * FROM [sys].[sysobjects] WHERE [name]='Museum' AND [xtype]='U') 
+    IF NOT EXISTS (SELECT * FROM [Art].[sys].[sysobjects] WHERE [name]='Museum' AND [xtype]='U')
     BEGIN 
     CREATE TABLE [Art].[dbo].[Museum] (
     [Id_Museum] INT PRIMARY KEY, 
@@ -23,7 +23,7 @@ var createMuseum= @"
     ) END";
 
 var createArtist = @"
-    IF NOT EXISTS (SELECT * FROM [sys].[sysobjects] WHERE [name]='Artist' and [xtype]='U') 
+    IF NOT EXISTS (SELECT * FROM [Art].[sys].[sysobjects] WHERE [name]='Artist' and [xtype]='U') 
     BEGIN 
     CREATE TABLE [Art].[dbo].[Artist] (
     [Id_Artist] INT PRIMARY KEY,
@@ -32,7 +32,7 @@ var createArtist = @"
     ) END";
 
 var createCharacter = @"
-    IF NOT EXISTS (SELECT * FROM [sys].[sysobjects] WHERE [name]='Character' and [xtype]='U') 
+    IF NOT EXISTS (SELECT * FROM [Art].[sys].[sysobjects] WHERE [name]='Character' and [xtype]='U') 
     BEGIN 
     CREATE TABLE [Art].[dbo].[Character] (
     [Id_Character] INT PRIMARY KEY, 
@@ -40,7 +40,7 @@ var createCharacter = @"
     ) END";
 
 var createArtwork = @"
-    IF NOT EXISTS (SELECT * FROM [sys].[sysobjects] WHERE [name]='Artwork' and [xtype]='U') 
+    IF NOT EXISTS (SELECT * FROM [Art].[sys].[sysobjects] WHERE [name]='Artwork' and [xtype]='U') 
     BEGIN 
     CREATE TABLE [Art].[dbo].[Artwork] (
     [Id_Artwork] INT PRIMARY KEY, 
