@@ -1,4 +1,4 @@
-﻿using Ex3;
+using Ex3;
 using Ex3.Models;
 using Ex3.Models.Entities;
 using Ex3.Repositories.DbContexts;
@@ -37,7 +37,7 @@ Console.WriteLine("...");
 // dotnet ef dbcontext Scaffold "Server=127.0.0.1,1433;Database=ArtTest;User ID=SA;Password=r00t.R00T;Encrypt=True;TrustServerCertificate=True;Connection Timeout=180;" Microsoft.EntityFrameworkCore.SqlServer -o DB
 
 // migration on project terminal:
-// do firts: dotnet ef migrations add Initial
+// do first: dotnet ef migrations add Initial
 // do undo: dotnet ef migrations remove
 // do update: dotnet ef database update
 
